@@ -89,14 +89,14 @@ section{padding:clamp(64px,8vw,112px) 0}
 /* ---------- products ---------- */
 .grid{display:grid;gap:20px;grid-template-columns:1fr}
 @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
-@media(min-width:960px){.grid-4{grid-template-columns:repeat(4,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:960px){.grid-4{grid-template-columns:repeat(4,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-2{grid-template-columns:repeat(2,1fr)}}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 2px rgba(11,58,106,.04),0 8px 24px -12px rgba(11,58,106,.12);transition:box-shadow .2s,transform .2s,border-color .2s;overflow:hidden}
 .card:hover{transform:translateY(-3px);border-color:#C3D3E2;box-shadow:0 2px 4px rgba(11,58,106,.05),0 18px 40px -16px rgba(11,58,106,.22)}
 .card h3{font-size:19px;letter-spacing:-.01em;margin-top:2px}
 .card p{line-height:1.55}
-.card .figwrap{margin:-22px -24px 16px;aspect-ratio:16/9;background:var(--ice);border-bottom:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
-.card .figwrap img{width:100%;height:100%;object-fit:cover;object-position:center}
-.card .figwrap .ph{width:100%;height:100%;border:0;border-radius:0;min-height:0;background:repeating-linear-gradient(135deg,var(--ice) 0 12px,#E3ECF4 12px 24px)}
+.card .figwrap{margin:-22px -24px 16px;aspect-ratio:16/9;position:relative;background:var(--ice);border-bottom:1px solid var(--line);overflow:hidden}
+.card .figwrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.card .figwrap .ph{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:0;min-height:0;background:repeating-linear-gradient(135deg,var(--ice) 0 12px,#E3ECF4 12px 24px)}
 .card p{font-size:15px;color:var(--muted)}
 .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);display:inline-flex;align-items:center;gap:8px}
 .tag::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7}
@@ -120,6 +120,8 @@ section{padding:clamp(64px,8vw,112px) 0}
 .step h3{margin:12px 0 8px;font-size:19px;letter-spacing:-.01em}
 .step p{font-size:15px;color:var(--muted);margin-bottom:18px;line-height:1.55}
 .step .ph{margin-top:auto;min-height:110px;border-radius:8px}
+.step .stepfig{order:-1;margin:-26px -26px 18px;aspect-ratio:16/9;position:relative;background:#fff;border-bottom:1px solid var(--line);overflow:hidden}
+.step .stepfig img{position:absolute;inset:14px;width:calc(100% - 28px);height:calc(100% - 28px);object-fit:contain;display:block}
 
 /* ---------- map ---------- */
 .map-wrap{display:grid;gap:28px;grid-template-columns:1fr}
@@ -470,7 +472,7 @@ footer a:hover{color:var(--navy)}
 <section id="why" style="padding-bottom:0">
   <div class="wrap">
     <div class="section-head" style="grid-template-columns:1fr">
-      <div><div class="eyebrow">Why now</div><h2>Three things lined up</h2></div>
+      <div><div class="eyebrow">Why now</div><h2>Three Things Lined Up</h2></div>
       <p style="padding-top:0;max-width:72ch;font-size:19px;line-height:1.5">Satellite imagery is free and revisits occur weekly. Physics-informed, probabilistic models finally hold up in turbid, sediment-heavy water where older methods failed. And the communities that need this data are making relocation and infrastructure decisions this decade, not next. The window to put a depth map in front of those decisions is open now.</p>
     </div>
   </div>
@@ -480,12 +482,12 @@ footer a:hover{color:var(--navy)}
 <section id="products">
   <div class="wrap">
     <div class="section-head">
-      <div><div class="eyebrow">Products</div><h2>One model family, three water bodies</h2></div>
+      <div><div class="eyebrow">Products</div><h2>One Model Family, Two Water Bodies</h2></div>
       <p>Every product delivers two rasters for any requested date since 2016: a best-estimate depth grid and a per-pixel uncertainty map. You know where to trust it, and where to send a boat.</p>
     </div>
-    <div class="grid grid-3">
+    <div class="grid grid-2">
       <article class="card">
-        <div class="figwrap"><img src="figures/nearshore.jpg" alt="Why standard SDB fails in turbid water, and the temporal PINN outputs: stable depth with uncertainty, and water clarity per date"></div>
+        <div class="figwrap"><img src="figures/nearshore.jpg" alt="Nome, Alaska: airborne LiDAR depth (top) beside the PINN prediction (bottom) over the same nearshore area"></div>
         <span class="tag flag">Flagship</span>
         <h3>Nearshore coastal</h3>
         <p>Open coast, inlets, and barge landings from Sentinel-2 optical imagery. Built for the turbid, optically complex water that defines Alaska's coast.</p>
@@ -496,13 +498,6 @@ footer a:hover{color:var(--navy)}
         <h3>Rivers</h3>
         <p>Channel depth and cross-sections from SWOT surface elevation and Sentinel-2, for navigation, flood modeling, and fish passage — the same engine, extended inland.</p>
       </article>
-      <article class="card">
-        <div class="figwrap"><img src="figures/lakes.jpg" alt="Sentinel-2 true color beside KAN depth prediction for Teshekpuk and Ikpikpuk lakes, with uncertainty inset"></div>
-        <span class="tag">Proof of concept</span>
-        <h3>Lakes</h3>
-        <p>Inland lakes for water supply, ice-road planning, and habitat assessment.</p>
-        <p class="fine">Figure: concept rendering of the 2024 KAN product; accuracy figures from model validation.</p>
-      </article>
     </div>
   </div>
 </section>
@@ -511,7 +506,7 @@ footer a:hover{color:var(--navy)}
 <section id="for" style="background:var(--ice)">
   <div class="wrap">
     <div class="section-head">
-      <div><div class="eyebrow">Who it's for</div><h2>Built with the people who use it</h2></div>
+      <div><div class="eyebrow">Who it's for</div><h2>Built With the People Who Use It</h2></div>
       <p>Currently we are conducting customer discovery with National NSF I-Corps. We work directly with Alaskan coastal communities: residents and regional experts flag what the imagery misses — a shifted bar, a new channel, ice — and our models are built to take that knowledge in and revise the map, not just be checked against it afterward.</p>
     </div>
     <div class="grid grid-4">
@@ -531,7 +526,7 @@ footer a:hover{color:var(--navy)}
 <section class="how" id="how">
   <div class="wrap">
     <div class="section-head">
-      <div><div class="eyebrow">How it works</div><h2>Probability and physics keep the deep‑learning networks honest</h2></div>
+      <div><div class="eyebrow">How it works</div><h2>Probability and Physics Keep the Deep‑Learning Networks Honest</h2></div>
       <p>A depth estimate without an error bar is a guess. Our networks must satisfy the physics of how light attenuates through water, and they return a probability distribution for every pixel, not a single number. That uncertainty map is the product: it tells a planner which depths to build on, which to verify, and where to send a survey vessel.</p>
     </div>
     <div class="steps">
@@ -539,19 +534,19 @@ footer a:hover{color:var(--navy)}
         <div class="n">01</div>
         <h3>Satellite imagery</h3>
         <p>Free, global, revisited every few days. Sentinel-2 for optical depth, Sentinel-1 SAR for waterlines, SWOT for river surface elevation.</p>
-        <div class="ph">DIAGRAM: input bands</div>
+        <div class="stepfig"><img src="figures/step1-satellites.jpg" alt="Sentinel-2 optical, Sentinel-1 SAR, and SWOT radar observing water extent, quality, and surface elevation"></div>
       </div>
       <div class="step">
         <div class="n">02</div>
-        <h3>Physics-informed model</h3>
-        <p>PINN and KAN architectures trained against LiDAR ground truth, with the physics residual as a loss term. Interpretable by construction.</p>
-        <div class="ph">DIAGRAM: network + residual</div>
+        <h3>Physics-informed, probabilistic model</h3>
+        <p>PINN and KAN architectures trained against LiDAR ground truth, with the physics residual as a loss term. The network predicts a distribution for every pixel, not a point — so the answer carries its own confidence. Interpretable by construction.</p>
+        <div class="stepfig"><img src="figures/step2-network.jpg" alt="Physics-informed neural network training loop: inputs, depth and attenuation predictor, physics constraints, total loss, optimization"></div>
       </div>
       <div class="step">
         <div class="n">03</div>
         <h3>What you receive</h3>
-        <p>Two GeoTIFF rasters for the date you ask for: best-estimate depth and per-pixel uncertainty. Any coast with Sentinel-2 coverage, any date since 2016. Re-run after every storm season.</p>
-        <div class="ph">DIAGRAM: output + uncertainty</div>
+        <p>Two GeoTIFF rasters for the date you ask for: the most probable depth and the uncertainty around it, pixel by pixel. Any coast with Sentinel-2 coverage, any date since 2016. Re-run after every storm season.</p>
+        <div class="stepfig"><img src="figures/step3-depth-uncertainty.jpg" alt="Nome: predicted depth (left) and total uncertainty (right) from the Bayesian KAN model"></div>
       </div>
     </div>
   </div>
@@ -561,7 +556,7 @@ footer a:hover{color:var(--navy)}
 <section id="sites">
   <div class="wrap">
     <div class="section-head">
-      <div><div class="eyebrow">Validation</div><h2>19 sites, sub&#8209;meter accuracy at every site</h2></div>
+      <div><div class="eyebrow">Validation</div><h2>19 Sites, Sub&#8209;Meter Accuracy at Every Site</h2></div>
       <p>From Akutan to Kaktovik, each site is validated against airborne LiDAR. These are the coasts where the problem is hardest — turbid, ice-affected, and largely uncharted.</p>
     </div>
     <div class="two-panel">
@@ -589,7 +584,7 @@ footer a:hover{color:var(--navy)}
 <section id="research">
   <div class="wrap">
     <div class="section-head">
-      <div><div class="eyebrow">Research</div><h2>Peer-reviewed foundations</h2></div>
+      <div><div class="eyebrow">Research</div><h2>Peer-Reviewed Foundations</h2></div>
       <p>FathomWave spun out of the UAF Coastal Remote Sensing Lab. The methods are peer-reviewed and open where they can be. <span style="color:var(--muted);font-size:14px">* Accuracy figures on this page are from work currently under peer review.</span></p>
     </div>
     <div>
@@ -609,7 +604,7 @@ footer a:hover{color:var(--navy)}
 <section id="insights" style="background:var(--ice)">
   <div class="wrap">
     <div class="section-head">
-      <div><div class="eyebrow">Insights</div><h2>Notes from the coast</h2></div>
+      <div><div class="eyebrow">Insights</div><h2>Notes From the Coast</h2></div>
       <p>How we think about the coast: tutorials, explainers, and field notes from our team, alongside the reports and observing-system briefs that frame the problem we work on.</p>
     </div>
     <div class="grid grid-4">
@@ -644,12 +639,13 @@ footer a:hover{color:var(--navy)}
     <p class="lede">FathomWave Geospatial is a student-led team of coastal scientists and machine-learning researchers building depth data for Alaskan communities — for relocation and erosion planning, safe barge and skiff landings, infrastructure and permitting decisions, and flood and storm-surge models — depth data that, for most of this coast, has never existed.</p>
     <p class="lede">FathomWave spun out of the UAF Coastal Mapping Program. The methods our business is founded on are scientifically rigorous, peer-reviewed, built to scale, and open source wherever possible.</p>
     <div class="award"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5 7 22l5-3 5 3-1.5-7.5"/></svg>2026 UAF Best Graduate / Post‑Graduate Innovation — Winner</div>
-    <div class="team grid grid-4" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr))">
+    <div class="team grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
       <div class="person"><img class="portrait" src="team/barrett.jpg" alt="Barrett Flynn"><b>Barrett Flynn</b><span>CEO · PhD student</span></div>
-      <div class="person"><div class="ph">PHOTO</div><b>Maddi McArthur</b><span>COO · PhD student</span></div>
+      <div class="person"><img class="portrait" src="team/maddi.jpg" alt="Maddi McArthur"><b>Maddi McArthur</b><span>COO · PhD student</span></div>
       <div class="person"><img class="portrait" src="team/logan.jpg" alt="Logan Borger"><b>Logan Borger</b><span>CTO · PhD student</span></div>
-      <div class="person"><div class="ph">PHOTO</div><b>Julia Cheesman</b><span>CSO · Master's student</span></div>
+      <div class="person"><img class="portrait" src="team/julia.jpg" alt="Julia Cheesman"><b>Julia Cheesman</b><span>CSO · Master's student</span></div>
       <div class="person"><img class="portrait" src="team/erin.jpg" alt="Dr. Erin Trochim"><b>Dr. Erin Trochim</b><span>CVO · Professor, UAF</span></div>
+      <div class="person"><img class="portrait" src="team/peter.jpg" alt="Dr. Peter Webley"><b>Dr. Peter Webley</b><span>Industry Mentor · Director &amp; Federal Grants PI, Center for Innovation</span></div>
     </div>
     <div class="backing">
       <span class="lab">Backed by</span>
@@ -664,7 +660,7 @@ footer a:hover{color:var(--navy)}
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="eyebrow" style="color:var(--gold)">Contact</div>
-    <h2>Have a coastline, river, or lake that needs a depth map?</h2>
+    <h2>Have a Coastline, River, or Lake That Needs a Depth Map?</h2>
     <p>Tell us where. We'll tell you what the satellites can see, what they can't, and what it would take.</p>
     <a class="btn btn-primary" href="mailto:hello@fathomwave.com">hello@fathomwave.com</a>
   </div>
@@ -673,7 +669,6 @@ footer a:hover{color:var(--navy)}
 <footer>
   <div class="wrap">
     <span>© 2026 FathomWave Geospatial · Fairbanks, Alaska</span>
-    <span><a href="#">LinkedIn</a> · <a href="#">GitHub</a> · <a href="#research">Research</a></span>
     <span style="width:100%;font-family:var(--mono);font-size:11px">Hero photo: Andrzej Kryszpiniuk / Unsplash</span>
   </div>
 </footer>
