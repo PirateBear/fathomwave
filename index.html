@@ -473,7 +473,7 @@ footer a:hover{color:var(--navy)}
   <div class="wrap">
     <div class="section-head" style="grid-template-columns:1fr">
       <div><div class="eyebrow">Approach</div><h2>What We Do</h2></div>
-      <p style="padding-top:0;max-width:72ch;font-size:19px;line-height:1.5">We turn publicly accessible, regularly repeating satellite imagery into satellite-derived bathymetry (SDB) using physics-informed, probabilistic models &mdash; interpretable, defensible depth in the turbid, sediment-heavy water where older methods failed. And we are building agentic frameworks that fold community knowledge into the map itself, so what residents know about their coast becomes part of the estimate rather than a note beside it.</p>
+      <p style="padding-top:0;max-width:72ch;font-size:19px;line-height:1.5">We turn publicly accessible, regularly repeating satellite imagery into satellite-derived bathymetry (SDB) using physics-informed, probabilistic models that provide interpretable, defensible depth in the turbid, sediment-heavy water where older methods failed. We are also building agentic frameworks that fold community knowledge into the map itself, so what residents know about their coast becomes part of the estimate rather than a note beside it.</p>
     </div>
   </div>
 </section>
@@ -483,14 +483,14 @@ footer a:hover{color:var(--navy)}
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Products</div><h2>One Model Family, Two Water Bodies</h2></div>
-      <p>For nearshore coastal and riverine areas alike we deliver the same two rasters for any requested date since 2016 &mdash; a best-estimate depth grid and a per-pixel uncertainty map &mdash; from one model family, with the sensors and physics tuned to each setting. You know where to trust it, and where to send a boat.</p>
+      <p>For nearshore coastal and riverine areas alike we deliver the same two rasters for any requested date since 2016: a best-estimate depth grid and a per-pixel uncertainty map. The two share a model family, but each is tuned to the physics of its own environment.</p>
     </div>
     <div class="grid grid-2">
       <article class="card">
         <div class="figwrap"><img src="figures/nearshore.jpg" alt="Nome, Alaska: airborne LiDAR depth (top) beside the PINN prediction (bottom) over the same nearshore area"></div>
         <span class="tag flag">Flagship</span>
         <h3>Nearshore coastal</h3>
-        <p>Depth and uncertainty for open coast, inlets, and barge landings, from Sentinel-2 optical imagery. Built for the turbid, optically complex water that has kept older methods off Alaska's coast.</p>
+        <p>Most SDB methods were built for clear tropical water. Ours was trained on the sediment-heavy, ice-affected Alaskan coast, where turbidity is the design case rather than the failure mode.</p>
       </article>
       <article class="card">
         <div class="figwrap"><div class="ph">OUTPUT FIGURE<br>river channel depth</div></div>
@@ -527,19 +527,19 @@ footer a:hover{color:var(--navy)}
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">How it works</div><h2>Probability and Physics Keep the Deep‑Learning Networks Honest</h2></div>
-      <p>A depth estimate without an error bar is a guess. Our networks must satisfy the physics of how light attenuates through water, and they return a probability distribution for every pixel, not a single number. That uncertainty map is the product: it tells a planner which depths to build on, which to verify, and where to send a survey vessel.</p>
+      <p>A depth estimate without an error bar is a guess. It might be right, but the number itself gives you no way to tell, and no way to defend the decision you make on it. Our networks must satisfy the physics of how light attenuates through water, and they return a probability distribution for every pixel, not a single number. That uncertainty map is the product: it tells a planner which depths to build on, which to verify, and where to send a survey vessel.</p>
     </div>
     <div class="steps">
       <div class="step">
         <div class="n">01</div>
         <h3>Satellite imagery</h3>
-        <p>Free, global, revisited every few days. Sentinel-2 for optical depth, Sentinel-1 SAR for waterlines, SWOT for river surface elevation.</p>
+        <p>Free, global, revisited every few days. Sentinel-2 for optical depth and SWOT/GRADES for river data.</p>
         <div class="stepfig"><img src="figures/step1-satellites.jpg" alt="Sentinel-2 optical, Sentinel-1 SAR, and SWOT radar observing water extent, quality, and surface elevation"></div>
       </div>
       <div class="step">
         <div class="n">02</div>
         <h3>Physics-informed, probabilistic model</h3>
-        <p>PINN and KAN architectures trained against LiDAR ground truth, with the physics residual as a loss term. The network predicts a distribution for every pixel, not a point — so the answer carries its own confidence. Interpretable by construction.</p>
+        <p>PINN and ProbAI architectures trained against LiDAR ground truth, with the physics residual as a loss term. The network predicts a distribution for every pixel, not a point, so the answer carries its own confidence. Interpretable by construction.</p>
         <div class="stepfig"><img src="figures/step2-network.jpg" alt="Physics-informed neural network training loop: inputs, depth and attenuation predictor, physics constraints, total loss, optimization"></div>
       </div>
       <div class="step">
@@ -557,7 +557,7 @@ footer a:hover{color:var(--navy)}
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Validation</div><h2>19 Sites, Sub&#8209;Meter Accuracy at Every Site</h2></div>
-      <p>From Akutan to Kaktovik, each site is validated against airborne LiDAR. These are the coasts where the problem is hardest — turbid, ice-affected, and largely uncharted.</p>
+      <p>From Akutan to Kaktovik, each site is validated against airborne LiDAR. These are the coasts where the problem is hardest: turbid, ice-affected waters that are largely uncharted.</p>
     </div>
     <div class="two-panel">
       <figure class="panel panel-map">
@@ -605,7 +605,7 @@ footer a:hover{color:var(--navy)}
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Insights</div><h2>Notes From the Coast</h2></div>
-      <p>Work published by the FathomWave team that shows how we think about the coast &mdash; tutorials, explainers, courses, and field notes &mdash; alongside the reports and observing-system briefs that frame the problem we work on.</p>
+      <p>Work published by the FathomWave team that shows how we think about the coast — tutorials, explainers, courses, and field notes — alongside the reports and observing-system briefs that frame the problem we work on.</p>
     </div>
     <div class="grid grid-3">
       <a class="post" href="https://medium.com/geospatial-processing-at-scale/satellite-derived-bathymetry-41fb5c868bb1" target="_blank" rel="noopener">
