@@ -179,7 +179,7 @@ section{padding:clamp(64px,8vw,112px) 0}
 /* ---------- contact ---------- */
 .contact{background:var(--navy);color:#fff}
 .contact h2{max-width:24ch;text-wrap:balance}
-.contact p{color:rgba(255,255,255,.8);margin:14px 0 28px}
+.contact p{color:rgba(255,255,255,.8);margin:14px 0 28px;max-width:none}
 .contact .btn-primary{background:#fff;color:var(--navy)}
 .contact .btn-primary:hover{background:var(--ice)}
 
@@ -468,12 +468,12 @@ footer a:hover{color:var(--navy)}
   </div>
 </div>
 
-<!-- ============ WHY NOW ============ -->
-<section id="why" style="padding-bottom:0">
+<!-- ============ WHAT WE DO ============ -->
+<section id="what" style="padding-bottom:0">
   <div class="wrap">
     <div class="section-head" style="grid-template-columns:1fr">
-      <div><div class="eyebrow">Why now</div><h2>Three Things Lined Up</h2></div>
-      <p style="padding-top:0;max-width:72ch;font-size:19px;line-height:1.5">Satellite imagery is free and revisits occur weekly. Physics-informed, probabilistic models finally hold up in turbid, sediment-heavy water where older methods failed. And the communities that need this data are making relocation and infrastructure decisions this decade, not next. The window to put a depth map in front of those decisions is open now.</p>
+      <div><div class="eyebrow">Approach</div><h2>What We Do</h2></div>
+      <p style="padding-top:0;max-width:72ch;font-size:19px;line-height:1.5">We turn publicly accessible, regularly repeating satellite imagery into satellite-derived bathymetry (SDB) using physics-informed, probabilistic models &mdash; interpretable, defensible depth in the turbid, sediment-heavy water where older methods failed. And we are building agentic frameworks that fold community knowledge into the map itself, so what residents know about their coast becomes part of the estimate rather than a note beside it.</p>
     </div>
   </div>
 </section>
@@ -483,14 +483,14 @@ footer a:hover{color:var(--navy)}
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Products</div><h2>One Model Family, Two Water Bodies</h2></div>
-      <p>Every product delivers two rasters for any requested date since 2016: a best-estimate depth grid and a per-pixel uncertainty map. You know where to trust it, and where to send a boat.</p>
+      <p>For nearshore coastal and riverine areas alike we deliver the same two rasters for any requested date since 2016 &mdash; a best-estimate depth grid and a per-pixel uncertainty map &mdash; from one model family, with the sensors and physics tuned to each setting. You know where to trust it, and where to send a boat.</p>
     </div>
     <div class="grid grid-2">
       <article class="card">
         <div class="figwrap"><img src="figures/nearshore.jpg" alt="Nome, Alaska: airborne LiDAR depth (top) beside the PINN prediction (bottom) over the same nearshore area"></div>
         <span class="tag flag">Flagship</span>
         <h3>Nearshore coastal</h3>
-        <p>Open coast, inlets, and barge landings from Sentinel-2 optical imagery. Built for the turbid, optically complex water that defines Alaska's coast.</p>
+        <p>Depth and uncertainty for open coast, inlets, and barge landings, from Sentinel-2 optical imagery. Built for the turbid, optically complex water that has kept older methods off Alaska's coast.</p>
       </article>
       <article class="card">
         <div class="figwrap"><div class="ph">OUTPUT FIGURE<br>river channel depth</div></div>
@@ -605,9 +605,9 @@ footer a:hover{color:var(--navy)}
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Insights</div><h2>Notes From the Coast</h2></div>
-      <p>How we think about the coast: tutorials, explainers, and field notes from our team, alongside the reports and observing-system briefs that frame the problem we work on.</p>
+      <p>Work published by the FathomWave team that shows how we think about the coast &mdash; tutorials, explainers, courses, and field notes &mdash; alongside the reports and observing-system briefs that frame the problem we work on.</p>
     </div>
-    <div class="grid grid-4">
+    <div class="grid grid-3">
       <a class="post" href="https://medium.com/geospatial-processing-at-scale/satellite-derived-bathymetry-41fb5c868bb1" target="_blank" rel="noopener">
         <div class="pmeta"><span class="tag">Tutorial · 2025</span><span class="src">Medium</span></div>
         <h3>Satellite-derived bathymetry: a tutorial in Google Earth Engine</h3>
@@ -617,6 +617,11 @@ footer a:hover{color:var(--navy)}
         <div class="pmeta"><span class="tag">Explainer · 2024</span><span class="src">Medium</span></div>
         <h3>Topobathy LiDAR 101</h3>
         <p>McArthur, Lomelino &amp; Trochim</p>
+      </a>
+      <a class="post" href="https://www.edx.org/learn/environmental-studies/university-of-alaska-fairbanks-topobathymetry" target="_blank" rel="noopener">
+        <div class="pmeta"><span class="tag">Course</span><span class="src">edX &middot; AlaskaX</span></div>
+        <h3>Introduction to Topobathymetric Lidar Data</h3>
+        <p>University of Alaska Fairbanks</p>
       </a>
       <a class="post" href="https://medium.com/geospatial-processing-at-scale/lidar-data-security-65f4171a5f4b" target="_blank" rel="noopener">
         <div class="pmeta"><span class="tag">Explainer · 2025</span><span class="src">Medium</span></div>
@@ -636,7 +641,7 @@ footer a:hover{color:var(--navy)}
 <section class="about" id="about">
   <div class="wrap">
     <div class="eyebrow">About us</div>
-    <p class="lede">FathomWave Geospatial is a student-led team of coastal scientists and machine-learning researchers building depth data for Alaskan communities — for relocation and erosion planning, safe barge and skiff landings, infrastructure and permitting decisions, and flood and storm-surge models — depth data that, for most of this coast, has never existed.</p>
+    <p class="lede">FathomWave Geospatial is a student-led team of coastal scientists and machine-learning researchers building depth data for Alaskan communities. Our products are built for a range of end users, supporting community and relocation planning, navigation and safe landings, infrastructure and permitting decisions, and flood and storm-surge models. For most of Alaska's nearshore coast and rivers, the depth data we're creating is out of date or has never existed at all.</p>
     <p class="lede">FathomWave spun out of the UAF Coastal Mapping Program. The methods our business is founded on are scientifically rigorous, peer-reviewed, built to scale, and open source wherever possible.</p>
     <div class="award"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5 7 22l5-3 5 3-1.5-7.5"/></svg>2026 UAF Best Graduate / Post‑Graduate Innovation — Winner</div>
     <div class="team grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
@@ -660,7 +665,7 @@ footer a:hover{color:var(--navy)}
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="eyebrow" style="color:var(--gold)">Contact</div>
-    <h2>Have a Coastline, River, or Lake That Needs a Depth Map?</h2>
+    <h2>Have a Coastline or River That Needs Bathymetric Mapping?</h2>
     <p>Tell us where. We'll tell you what the satellites can see, what they can't, and what it would take.</p>
     <a class="btn btn-primary" href="mailto:hello@fathomwave.com">hello@fathomwave.com</a>
   </div>
