@@ -41,8 +41,9 @@ p{max-width:62ch}
 section{padding:clamp(64px,8vw,112px) 0}
 .section-head{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:40px}
 .section-head h2{max-width:20ch;text-wrap:balance}
-.section-head p{color:var(--ink);font-size:17px;max-width:60ch;margin-top:6px}
-@media(min-width:800px){.section-head{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:start;gap:48px}.section-head p{padding-top:34px}}
+.section-head p{color:var(--ink);font-size:17px;max-width:60ch;margin-top:6px;text-wrap:pretty}
+.section-head .fnote{display:block;margin-top:12px;color:var(--muted);font-size:14px}
+@media(min-width:800px){.section-head{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:48px}}
 
 /* placeholder blocks — swap for real assets */
 .ph{background:repeating-linear-gradient(135deg,var(--ice) 0 12px,#E3ECF4 12px 24px);border:1px dashed #A9C1D6;border-radius:8px;display:grid;place-items:center;color:var(--mid);font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-align:center;padding:16px;min-height:200px}
@@ -473,7 +474,7 @@ footer a:hover{color:var(--navy)}
   <div class="wrap">
     <div class="section-head" style="grid-template-columns:1fr">
       <div><div class="eyebrow">Approach</div><h2>What We Do</h2></div>
-      <p style="padding-top:0;max-width:72ch;font-size:19px;line-height:1.5">We turn publicly accessible, regularly repeating satellite imagery into satellite-derived bathymetry (SDB) using physics-informed, probabilistic models that provide interpretable, defensible depth in the turbid, sediment-heavy water where older methods failed. We are also building agentic frameworks that fold community knowledge into the map itself, so what residents know about their coast becomes part of the estimate rather than a note beside it.</p>
+      <p style="max-width:72ch;font-size:19px;line-height:1.5">We turn publicly accessible, regularly repeating satellite imagery into satellite-derived bathymetry (SDB) using physics-informed, probabilistic models that provide interpretable, defensible depth in the turbid, sediment-heavy water where older methods failed. We are also building agentic frameworks that fold community knowledge into the map itself, so what residents know about their coast becomes part of the estimate rather than a note beside it.</p>
     </div>
   </div>
 </section>
@@ -585,7 +586,7 @@ footer a:hover{color:var(--navy)}
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Research</div><h2>Peer-Reviewed Foundations</h2></div>
-      <p>FathomWave spun out of the UAF Coastal Remote Sensing Lab. The methods are peer-reviewed and open where they can be. <span style="color:var(--muted);font-size:14px">* Accuracy figures on this page are from work currently under peer review.</span></p>
+      <p>FathomWave spun out of the UAF Coastal Remote Sensing Lab. The methods are peer-reviewed and open where they can be. <span class="fnote">* Accuracy figures on this page are from work currently under peer review.</span></p>
     </div>
     <div>
       <article class="pub">
@@ -605,7 +606,7 @@ footer a:hover{color:var(--navy)}
   <div class="wrap">
     <div class="section-head">
       <div><div class="eyebrow">Insights</div><h2>Notes From the Coast</h2></div>
-      <p>Work published by the FathomWave team that shows how we think about the coast — tutorials, explainers, courses, and field notes — alongside the reports and observing-system briefs that frame the problem we work on.</p>
+      <p>Work published by the FathomWave team that shows how we think about the coast, including tutorials, explainers, courses, and field notes. We also point to the reports and observing-system briefs that frame the problem we work on.</p>
     </div>
     <div class="grid grid-3">
       <a class="post" href="https://medium.com/geospatial-processing-at-scale/satellite-derived-bathymetry-41fb5c868bb1" target="_blank" rel="noopener">
