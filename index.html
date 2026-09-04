@@ -65,11 +65,16 @@ section{padding:clamp(64px,8vw,112px) 0}
 .hero-photo{z-index:1}
 .hero-scene{z-index:0}
 .hero-net{z-index:3;opacity:1}
-.hero-labels{position:absolute;top:0;left:0;right:0;z-index:3;pointer-events:none;padding-top:26px}
-.hero-labels .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:20px}
+/* Artwork annotations. Deliberately NOT .wrap: `.hero .wrap` would hand this band
+   the hero's 160px top padding and drop it straight onto the eyebrow. */
+.hero-labels{position:absolute;inset:0;z-index:3;pointer-events:none}
+.hl-row{position:absolute;left:0;right:0;max-width:var(--max);margin:0 auto;padding:0 var(--gutter);
+  display:flex;justify-content:space-between;align-items:baseline;gap:24px}
+.hl-top{top:28px}
+.hl-bot{bottom:26px;justify-content:flex-end}
 .hero-labels span{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
-  color:rgba(255,255,255,.72);white-space:nowrap}
-.hero-labels span.c{color:var(--gold)}
+  color:rgba(255,255,255,.72);white-space:nowrap;text-shadow:0 1px 3px rgba(7,42,78,.55)}
+.hero-labels .c{color:var(--gold)}
 @media(max-width:860px){.hero-labels{display:none}}
 .hero-scrim{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(7,42,78,.55) 0%,rgba(7,42,78,.62) 55%,rgba(7,42,78,.94) 100%)}
 .hero .wrap{position:relative;z-index:4;padding-top:160px;padding-bottom:72px}
@@ -443,11 +448,15 @@ footer a:hover{color:var(--navy)}
       </g></g>
     </svg>
     <div class="hero-scrim"></div>
-    <div class="hero-labels" aria-hidden="true"><div class="wrap">
-      <span>Surface reflectance &middot; 2016 &rarr; now</span>
-      <span class="c">Physics constraint</span>
-      <span>Depth + uncertainty</span>
-    </div></div>
+    <div class="hero-labels" aria-hidden="true">
+      <div class="hl-row hl-top">
+        <span>Surface reflectance &middot; 2016 &rarr; now</span>
+        <span>Depth + uncertainty</span>
+      </div>
+      <div class="hl-row hl-bot">
+        <span class="c">Physics constraint</span>
+      </div>
+    </div>
   </div>
 
   <div class="wrap">
