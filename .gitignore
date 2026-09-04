@@ -1,2 +1,10 @@
 .DS_Store
 Thumbs.db
+
+# Pitch-deck working files - internal, must never publish to the live site
+FathomWave-Deck.pptx
+FathomWave-Deck.pdf
+deck.html
+deck-additions.html
+deck-next-steps.html
+preflight.py
